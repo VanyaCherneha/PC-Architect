@@ -1,0 +1,185 @@
+{
+  "header": {
+    "title": "PC ARCHITECT",
+    "budget": "CHF {{spent}} / {{total}}",
+    "exitFs": "EXIT FS",
+    "fullScreen": "FULLSCREEN"
+  },
+  "launchScreen": {
+    "title": "PC ARCHITECT",
+    "tagline": "Build. Optimize. Master the Machine.",
+    "launching": "LAUNCHING...",
+    "playFullscreen": "PLAY FULLSCREEN",
+    "playInWindow": "Play in window →",
+    "hint": "Press <kbd>F11</kbd> or <kbd>Esc</kbd> to toggle fullscreen anytime"
+  },
+  "scenarioSelect": {
+    "title": "PC ARCHITECT",
+    "subtitle": "Choose your mission. Build the perfect PC.",
+    "difficultyTitle": "SELECT DIFFICULTY",
+    "difficulty": {
+      "easy": "Easy (10:00)",
+      "normal": "Normal (5:00)",
+      "hard": "Hard (3:00)",
+      "impossible": "Impossible (1:00)",
+      "goat": "GOAT (0:30)"
+    },
+    "scenarios": {
+      "office": {
+        "title": "OFFICE",
+        "description": "Build a reliable office workstation for everyday productivity, emails, and document editing."
+      },
+      "gaming": {
+        "title": "GAMING",
+        "description": "Build the ultimate gaming rig that crushes AAA titles at high settings and competitive FPS."
+      },
+      "workstation": {
+        "title": "WORKSTATION",
+        "description": "Build a powerhouse for 3D rendering, video editing, and heavy multi-threaded workloads."
+      }
+    }
+  },
+  "scenarioCard": {
+    "budget": "Budget",
+    "select": "SELECT →"
+  },
+  "configurator": {
+    "componentsTitle": "COMPONENTS",
+    "yourBuildTitle": "YOUR BUILD",
+    "required": "[ Required ]",
+    "optional": "[ Optional ]",
+    "empty": "[ Empty ]",
+    "clearBuild": "🔄 Reset",
+    "confirmReset": "Are you sure you want to reset your entire build? The timer will keep running!",
+    "estSystemDraw": "Est. System Draw: {{draw}}W / {{psuWattage}}",
+    "askWalter": "🤖 ASK WALTER",
+    "remove": "Remove",
+    "autoAdvance": "Auto-Advance",
+    "autoAdvanceOff": "Auto-Advance Off",
+    "sortBy": "Sort",
+    "priceLowHigh": "Price ↑",
+    "priceHighLow": "Price ↓",
+    "tier": "Tier",
+    "tierAll": "All",
+    "tierLow": "Low",
+    "tierMid": "Mid",
+    "tierHigh": "High",
+    "tierUltra": "Ultra",
+    "hint": "Hint",
+    "hintLoading": "Thinking...",
+    "hintTooltip": "Get a sarcastic nudge from Walter",
+    "compare": "Compare",
+    "compareExit": "Exit Compare",
+    "compareNow": "Compare selected",
+    "comparison": "Component Comparison",
+    "spec": "Spec",
+    "clearCompare": "Close & Clear",
+    "searchPlaceholder": "Search components...",
+    "assembleBuild": "ASSEMBLE BUILD",
+    "assembleBuildTooltip": "All required parts are chosen and compatible — build it!",
+    "assembleNotReady": "Select all required components with no conflicts first"
+  },
+  "budgetBar": {
+    "title": "BUDGET",
+    "overBudget": "⚠ CHF {{remaining}} over budget!",
+    "remaining": "CHF {{remaining}} remaining"
+  },
+  "compatibilityBadge": {
+    "allCompatible": "ALL COMPATIBLE",
+    "conflictDetected": "CONFLICT DETECTED"
+  },
+  "componentCard": {
+    "price": "Price: CHF {{price}}",
+    "socket": "Socket: {{socket}}",
+    "tdp": "TDP: {{tdp}}W",
+    "length": "Length: {{length}}mm",
+    "height": "Height: {{height}}mm",
+    "coolingPower": "Cooling Power: {{rating}}W",
+    "igpu": "Integrated Graphics: {{hasIGPU}}",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "results": {
+    "walterSays": "WALTER SAYS:",
+    "loadingSubtitle": "Hmm, let me analyze this build...",
+    "verdict": "VERDICT:",
+    "roast": "ROAST:",
+    "analysis": "ANALYSIS:",
+    "proTip": "PRO TIP:",
+    "buildSummary": "BUILD SUMMARY",
+    "category": "Category",
+    "component": "Component",
+    "price": "Price",
+    "missing": "[ Missing ]",
+    "total": "TOTAL",
+    "estPerformance": "ESTIMATED PERFORMANCE",
+    "gaming": "Gaming",
+    "workstation": "Workstation",
+    "tryAgain": "🔄 TRY AGAIN",
+    "newScenario": "🆕 NEW SCENARIO",
+    "timesUp": "TIME'S UP",
+    "shareResult": "📋 COPY RESULT",
+    "shareCopied": "Copied to clipboard!",
+    "assembling": "Assembling your PC...",
+    "verdicts": {
+      "GREAT": "GREAT",
+      "DECENT": "DECENT",
+      "POOR": "POOR",
+      "DISASTER": "DISASTER"
+    }
+  },
+  "walter": {
+    "label": "Walter"
+  },
+  "fallback": {
+    "great": {
+      "roast": "No roasts today, you actually did well.",
+      "analysis": "Everything is compatible, the performance is top-notch, and you stayed in budget.",
+      "tip": "Maybe try building blindfolded next time."
+    },
+    "decent": {
+      "roast": "Your build works but it's like putting ketchup on a steak.",
+      "analysis": "Functional, but could be better. Check your component balance and budget usage.",
+      "tip": "Review the CPU to GPU pairing to ensure neither is bottlenecking the other."
+    },
+    "disaster": {
+      "roast": "I've seen potatoes with better calculation logic than your part selection.",
+      "analysis": "There are serious compatibility issues, budget problems, or missing components.",
+      "tip": "Start from scratch and maybe read the requirements this time."
+    }
+  },
+  "walter_hints": {
+    "conflict": "Fix the fire in the conflict list first before begging for my wisdom.",
+    "missing_crucial": "You burned almost the entire budget and still don’t have {{partName}}. Brilliant planning—just not in the good way.",
+    "cpu_bottleneck": "Your GPU is ready for esports while the CPU is still doing spreadsheets. Maybe upgrade the brain, not just the biceps.",
+    "gpu_bottleneck": "Your CPU is a beast, your GPU is a toaster. Maybe give your frames a fighting chance.",
+    "weak_workstation": "For a workstation this looks more like an intern’s PC. Put some budget into CPU and RAM.",
+    "overspent_looks": "You spent more on metal and fans than on actual performance. Maybe the PC should do more than just look pretty.",
+    "hoarding_budget": "You’re hoarding budget like a dragon and still running entry-level parts. Spend a bit on a real CPU or GPU.",
+    "no_core": "Bold move: a PC without a PC. Start with CPU, RAM, and GPU before you decorate.",
+    "solid": "Looks like a solid work-in-progress. A couple of focused upgrades and even Walter might stop complaining.",
+    "parts": {
+      "cpu": "a CPU",
+      "mainboard": "a motherboard",
+      "ram": "any RAM",
+      "gpu": "a GPU or any display output",
+      "psu": "a power supply",
+      "ssd": "a drive",
+      "basic": "basic components"
+    }
+  },
+  "compat": {
+    "socketMismatch": "Socket mismatch: {{cpu}} ({{cpuSocket}}) is not compatible with {{mb}} ({{mbSocket}})",
+    "coolerMount": "Cooler mounting issue: {{cooler}} does not include brackets for {{socket}} socket",
+    "noDisplay": "No Display Output: {{cpu}} does not have integrated graphics. You must add a dedicated GPU.",
+    "ramTypeMismatch": "RAM type mismatch: {{ram}} ({{ramType}}) does not match {{mb}} ({{mbRamType}})",
+    "cpuRamMismatch": "CPU/RAM mismatch: {{cpu}} supports {{cpuRamType}} but {{ram}} is {{ramType}}",
+    "insufficientCooling": "Insufficient cooling: {{cooler}} is rated for {{coolerTdp}}W, but {{cpu}} has a TDP of {{cpuTdp}}W",
+    "insufficientPsu": "Insufficient PSU: {{psu}} ({{psuWattage}}W) may not handle peak draw of {{draw}}W (TDP: {{tdp}}W)",
+    "bottleneckCpuOverGpu": "Severe Bottleneck: The powerful {{cpu}} is severely bottlenecked by the {{gpuTier}}-tier {{gpu}}.",
+    "bottleneckGpuOverCpu": "Severe Bottleneck: The powerful {{gpu}} is held back by the {{cpuTier}}-tier {{cpu}}.",
+    "caseMbMismatch": "Case mismatch: {{pcCase}} does not support {{formFactor}} motherboards.",
+    "gpuTooLong": "GPU too long: {{gpu}} is {{gpuLength}}mm, but {{pcCase}} only supports up to {{maxLength}}mm.",
+    "coolerTooTall": "Cooler too tall: {{cooler}} is {{coolerHeight}}mm, but {{pcCase}} only supports up to {{maxHeight}}mm."
+  }
+}

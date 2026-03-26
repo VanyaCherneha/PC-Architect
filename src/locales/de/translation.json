@@ -1,0 +1,185 @@
+{
+  "header": {
+    "title": "PC ARCHITECT",
+    "budget": "CHF {{spent}} / {{total}}",
+    "exitFs": "VB BEENDEN",
+    "fullScreen": "VOLLBILD"
+  },
+  "launchScreen": {
+    "title": "PC ARCHITECT",
+    "tagline": "Bauen. Optimieren. Meistere die Maschine.",
+    "launching": "STARTET...",
+    "playFullscreen": "IM VOLLBILD SPIELEN",
+    "playInWindow": "Im Fenster spielen →",
+    "hint": "Drücke <kbd>F11</kbd> oder <kbd>Esc</kbd>, um jederzeit in den Vollbildmodus zu wechseln"
+  },
+  "scenarioSelect": {
+    "title": "PC ARCHITECT",
+    "subtitle": "Wähle deine Mission. Baue den perfekten PC.",
+    "difficultyTitle": "SCHWIERIGKEIT WÄHLEN",
+    "difficulty": {
+      "easy": "Leicht (10:00)",
+      "normal": "Normal (5:00)",
+      "hard": "Hart (3:00)",
+      "impossible": "Unmöglich (1:00)",
+      "goat": "GOAT (0:30)"
+    },
+    "scenarios": {
+      "office": {
+        "title": "BÜRO",
+        "description": "Baue eine zuverlässige Büro-Workstation für alltägliche Produktivität, E-Mails und Dokumentenbearbeitung."
+      },
+      "gaming": {
+        "title": "GAMING",
+        "description": "Baue das ultimative Gaming-Rig, das AAA-Titel auf hohen Einstellungen und mit kompetitiven FPS meistert."
+      },
+      "workstation": {
+        "title": "WORKSTATION",
+        "description": "Baue ein Kraftpaket für 3D-Rendering, Videobearbeitung und schwere Multi-Thread-Workloads."
+      }
+    }
+  },
+  "scenarioCard": {
+    "budget": "Budget",
+    "select": "AUSWÄHLEN →"
+  },
+  "configurator": {
+    "componentsTitle": "KOMPONENTEN",
+    "yourBuildTitle": "DEIN BUILD",
+    "required": "[ Erforderlich ]",
+    "optional": "[ Optional ]",
+    "empty": "[ Leer ]",
+    "clearBuild": "🔄 Zurücksetzen",
+    "confirmReset": "Bist du sicher, dass du deinen gesamten Build zurücksetzen willst? Der Timer läuft weiter!",
+    "estSystemDraw": "Geschätzter Verbrauch: {{draw}}W / {{psuWattage}}",
+    "askWalter": "🤖 WALTER FRAGEN",
+    "remove": "Entfernen",
+    "autoAdvance": "Auto-Weiter",
+    "autoAdvanceOff": "Auto-Weiter Aus",
+    "sortBy": "Sortieren",
+    "priceLowHigh": "Preis ↑",
+    "priceHighLow": "Preis ↓",
+    "tier": "Leistungsstufe",
+    "tierAll": "Alle",
+    "tierLow": "Einsteiger",
+    "tierMid": "Mittel",
+    "tierHigh": "High-End",
+    "tierUltra": "Ultra",
+    "hint": "Hinweis",
+    "hintLoading": "Denkt nach...",
+    "hintTooltip": "Hol dir einen sarkastischen Hinweis von Walter",
+    "compare": "Vergleichen",
+    "compareExit": "Vergleich beenden",
+    "compareNow": "Ausgewählte vergleichen",
+    "comparison": "Komponenten-Vergleich",
+    "spec": "Eigenschaft",
+    "clearCompare": "Schließen & Löschen",
+    "searchPlaceholder": "Komponenten suchen...",
+    "assembleBuild": "PC ZUSAMMENBAUEN",
+    "assembleBuildTooltip": "Alle Pflichtteile ausgewählt und kompatibel — jetzt zusammenbauen!",
+    "assembleNotReady": "Wähle zuerst alle Pflichtteile ohne Konflikte aus"
+  },
+  "budgetBar": {
+    "title": "BUDGET",
+    "overBudget": "⚠ CHF {{remaining}} über dem Budget!",
+    "remaining": "CHF {{remaining}} verbleibend"
+  },
+  "compatibilityBadge": {
+    "allCompatible": "ALLES KOMPATIBEL",
+    "conflictDetected": "KONFLIKT ERKANNT"
+  },
+  "componentCard": {
+    "price": "Preis: CHF {{price}}",
+    "socket": "Sockel: {{socket}}",
+    "tdp": "TDP: {{tdp}}W",
+    "length": "Länge: {{length}}mm",
+    "height": "Höhe: {{height}}mm",
+    "coolingPower": "Kühlleistung: {{rating}}W",
+    "igpu": "Integrierte Grafik: {{hasIGPU}}",
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "results": {
+    "walterSays": "WALTER SAGT:",
+    "loadingSubtitle": "Hmm, lass mich diesen Build analysieren...",
+    "verdict": "URTEIL:",
+    "roast": "ROAST:",
+    "analysis": "ANALYSE:",
+    "proTip": "PROFI-TIPP:",
+    "buildSummary": "BUILD-ZUSAMMENFASSUNG",
+    "category": "Kategorie",
+    "component": "Komponente",
+    "price": "Preis",
+    "missing": "[ Fehlt ]",
+    "total": "GESAMT",
+    "estPerformance": "GESCHÄTZTE LEISTUNG",
+    "gaming": "Gaming",
+    "workstation": "Workstation",
+    "tryAgain": "🔄 NOCHMAL VERSUCHEN",
+    "newScenario": "🆕 NEUES SZENARIO",
+    "timesUp": "ZEIT IST UM",
+    "shareResult": "📋 ERGEBNIS KOPIEREN",
+    "shareCopied": "In die Zwischenablage kopiert!",
+    "assembling": "Dein PC wird zusammengebaut...",
+    "verdicts": {
+      "GREAT": "GROSSARTIG",
+      "DECENT": "AKZEPTABEL",
+      "POOR": "SCHLECHT",
+      "DISASTER": "KATASTROPHE"
+    }
+  },
+  "walter": {
+    "label": "Walter"
+  },
+  "fallback": {
+    "great": {
+      "roast": "Heute gibt es keine Roasts, du hast es tatsächlich gut gemacht.",
+      "analysis": "Alles ist kompatibel, die Leistung ist erstklassig und du bist im Budget geblieben.",
+      "tip": "Vielleicht versuchst du das nächste Mal blind zu bauen."
+    },
+    "decent": {
+      "roast": "Dein Build funktioniert, aber es ist wie Ketchup auf einem Steak.",
+      "analysis": "Funktional, könnte aber besser sein. Überprüfe die Balance der Komponenten und die Budgetnutzung.",
+      "tip": "Überprüfe die Kombination aus CPU und GPU, um sicherzustellen, dass keine von beiden die andere ausbremst."
+    },
+    "disaster": {
+      "roast": "Ich habe schon Kartoffeln mit besserer Berechnungslogik als deiner Komponentenauswahl gesehen.",
+      "analysis": "Es gibt ernsthafte Kompatibilitätsprobleme, Budgetprobleme oder fehlende Komponenten.",
+      "tip": "Fang noch einmal von vorne an und lies dieses Mal vielleicht die Anforderungen."
+    }
+  },
+  "walter_hints": {
+    "conflict": "Erst den Brand im Konflikt-Panel löschen, dann meine Weisheit anzapfen.",
+    "missing_crucial": "Du hast fast das ganze Budget verbrannt und dir fehlt immer noch {{partName}}. Geniales Projektmanagement – nur nicht im guten Sinne.",
+    "cpu_bottleneck": "Deine GPU versucht Hochleistungssport, während die CPU noch im Bürokaffee hängt. Such dir einen stärkeren Prozessor.",
+    "gpu_bottleneck": "Die CPU ist ein Biest, aber die GPU ist ein Toaster. Gib der Grafik endlich etwas, das Frames schafft.",
+    "weak_workstation": "Für eine Workstation sieht das eher nach Praktikanten-PC aus. Investiere in stärkere CPU und mehr RAM.",
+    "overspent_looks": "Du hast mehr Geld in Blech und Lüfter gesteckt als in Leistung. Vielleicht sollte der PC mehr können als nur gut aussehen.",
+    "hoarding_budget": "Du hortest Budget wie ein Drache und spielst trotzdem mit Einsteiger-Hardware. Gönn dir wenigstens eine anständige CPU oder GPU.",
+    "no_core": "Mutiger Ansatz: ein PC ohne PC. Fang mit CPU, RAM und GPU an, bevor du Kunst installierst.",
+    "solid": "Sieht nach einem soliden Zwischenstand aus. Jetzt noch ein, zwei gezielte Upgrades und Walter hört vielleicht auf zu meckern.",
+    "parts": {
+      "cpu": "eine CPU",
+      "mainboard": "ein Mainboard",
+      "ram": "RAM",
+      "gpu": "eine Grafikkarte oder iGPU",
+      "psu": "ein Netzteil",
+      "ssd": "ein Laufwerk",
+      "basic": "die wichtigsten Teile"
+    }
+  },
+  "compat": {
+    "socketMismatch": "Sockel-Fehler: {{cpu}} ({{cpuSocket}}) ist nicht kompatibel mit {{mb}} ({{mbSocket}})",
+    "coolerMount": "Kühler-Montage: {{cooler}} hat keine Halterung für den {{socket}}-Sockel",
+    "noDisplay": "Kein Displayausgang: {{cpu}} hat keine integrierte Grafik. Eine dedizierte GPU wird benötigt.",
+    "ramTypeMismatch": "RAM-Typ-Fehler: {{ram}} ({{ramType}}) passt nicht zu {{mb}} ({{mbRamType}})",
+    "cpuRamMismatch": "CPU/RAM-Fehler: {{cpu}} unterstützt {{cpuRamType}}, aber {{ram}} ist {{ramType}}",
+    "insufficientCooling": "Unzureichende Kühlung: {{cooler}} ist für {{coolerTdp}}W ausgelegt, aber {{cpu}} hat eine TDP von {{cpuTdp}}W",
+    "insufficientPsu": "Unzureichendes Netzteil: {{psu}} ({{psuWattage}}W) reicht möglicherweise nicht für den Spitzenverbrauch von {{draw}}W (TDP: {{tdp}}W)",
+    "bottleneckCpuOverGpu": "Starker Flaschenhals: Die leistungsstarke {{cpu}} wird von der {{gpuTier}}-Stufe {{gpu}} ausgebremst.",
+    "bottleneckGpuOverCpu": "Starker Flaschenhals: Die leistungsstarke {{gpu}} wird von der {{cpuTier}}-Stufe {{cpu}} zurückgehalten.",
+    "caseMbMismatch": "Gehäuse-Fehler: {{pcCase}} unterstützt keine {{formFactor}}-Mainboards.",
+    "gpuTooLong": "GPU zu lang: {{gpu}} ist {{gpuLength}}mm, aber {{pcCase}} unterstützt nur bis {{maxLength}}mm.",
+    "coolerTooTall": "Kühler zu hoch: {{cooler}} ist {{coolerHeight}}mm, aber {{pcCase}} unterstützt nur bis {{maxHeight}}mm."
+  }
+}

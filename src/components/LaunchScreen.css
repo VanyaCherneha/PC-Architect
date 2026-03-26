@@ -1,0 +1,165 @@
+/* LaunchScreen */
+.launch-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.launch-screen__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 26, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.launch-screen__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Title */
+.launch-screen__title {
+  font-family: var(--font-title);
+  font-size: 6rem;
+  color: var(--color-neon);
+  letter-spacing: 14px;
+  text-shadow:
+    0 0 20px var(--color-neon-glow),
+    0 0 60px var(--color-neon-glow),
+    0 0 100px rgba(0, 255, 255, 0.08);
+  animation: launchTitleGlow 3s ease-in-out infinite;
+}
+
+/* Decorative glow ring behind title */
+.launch-screen__glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 255, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.launch-screen__tagline {
+  font-size: 1.1rem;
+  color: var(--color-text-dim);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: -0.5rem;
+}
+
+/* Main PLAY button */
+.launch-screen__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 3rem;
+  margin-top: 1rem;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  color: var(--color-base);
+  background: linear-gradient(135deg, var(--color-neon), var(--color-accent));
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 0 30px var(--color-neon-glow),
+    0 0 60px rgba(0, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.launch-screen__btn:hover:not(:disabled) {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow:
+    0 0 50px var(--color-neon-glow),
+    0 0 100px rgba(0, 255, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.launch-screen__btn--loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.launch-screen__btn-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* Skip link */
+.launch-screen__skip {
+  background: transparent;
+  border: none;
+  color: var(--color-text-dim);
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.launch-screen__skip:hover {
+  color: var(--color-neon);
+}
+
+/* Hint */
+.launch-screen__hint {
+  font-size: 0.75rem;
+  color: rgba(136, 146, 164, 0.5);
+  letter-spacing: 1px;
+  margin-top: -0.5rem;
+}
+
+.launch-screen__hint kbd {
+  background: var(--color-base-lighter);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+}
+
+@keyframes launchTitleGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 20px var(--color-neon-glow),
+      0 0 60px var(--color-neon-glow),
+      0 0 100px rgba(0, 255, 255, 0.08);
+  }
+  50% {
+    text-shadow:
+      0 0 30px var(--color-neon-glow),
+      0 0 80px var(--color-neon-glow),
+      0 0 140px rgba(0, 255, 255, 0.12);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .launch-screen__title {
+    font-size: 3rem;
+    letter-spacing: 8px;
+  }
+
+  .launch-screen__btn {
+    font-size: 1.1rem;
+    padding: 0.9rem 2rem;
+  }
+}

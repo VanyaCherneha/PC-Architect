@@ -1,0 +1,59 @@
+/* CompatibilityBadge */
+.compat-badge {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 2px solid;
+  transition: all var(--transition-med);
+}
+
+.compat-badge--ok {
+  border-color: var(--color-green);
+  background: rgba(0, 255, 136, 0.06);
+  box-shadow: 0 0 12px var(--color-green-glow);
+}
+
+.compat-badge--conflict {
+  border-color: var(--color-red);
+  background: rgba(255, 51, 102, 0.06);
+  box-shadow: 0 0 12px var(--color-red-glow);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.compat-badge__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compat-badge__icon {
+  font-size: 1.1rem;
+}
+
+.compat-badge__label {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.compat-badge--ok .compat-badge__label {
+  color: var(--color-green);
+}
+
+.compat-badge--conflict .compat-badge__label {
+  color: var(--color-red);
+}
+
+.compat-badge__errors {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+
+.compat-badge__error {
+  font-size: 0.75rem;
+  color: var(--color-red);
+  padding: 0.25rem 0;
+  border-top: 1px solid rgba(255, 51, 102, 0.15);
+  line-height: 1.4;
+}

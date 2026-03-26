@@ -1,0 +1,76 @@
+/* Walter */
+.walter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.walter--small {
+  max-width: 80px;
+}
+
+.walter--medium {
+  max-width: 180px;
+}
+
+.walter--large {
+  max-width: 280px;
+}
+
+.walter__avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid var(--color-neon);
+  box-shadow: 0 0 20px var(--color-neon-glow), 0 0 40px rgba(0, 255, 255, 0.1);
+  animation: float 4s ease-in-out infinite;
+  object-fit: cover;
+}
+
+.walter--small .walter__avatar {
+  border-width: 2px;
+  animation: none;
+}
+
+.walter__label {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  color: var(--color-neon);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.walter--small .walter__label {
+  font-size: 0.6rem;
+}
+
+/* Speech bubble */
+.walter__speech-bubble {
+  position: relative;
+  background: var(--color-panel);
+  border: 2px solid var(--color-neon);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.25rem;
+  max-width: 320px;
+  box-shadow: 0 0 15px var(--color-neon-glow);
+  animation: fadeIn 0.5s ease;
+}
+
+.walter__speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-neon);
+}
+
+.walter__speech-bubble p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
