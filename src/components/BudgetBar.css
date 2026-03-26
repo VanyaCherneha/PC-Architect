@@ -1,0 +1,62 @@
+/* BudgetBar */
+.budget-bar {
+  margin: 1rem 0;
+}
+
+.budget-bar__labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.budget-bar__title {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: var(--color-text-dim);
+}
+
+.budget-bar__amount {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-neon);
+}
+
+.budget-bar__amount--over {
+  color: var(--color-red);
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+.budget-bar__track {
+  width: 100%;
+  height: 10px;
+  background: var(--color-base-lighter);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.budget-bar__fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-neon));
+  transition: width var(--transition-med);
+  box-shadow: 0 0 10px var(--color-neon-glow);
+}
+
+.budget-bar__fill--over {
+  background: linear-gradient(90deg, var(--color-red), #FF6644);
+  box-shadow: 0 0 10px var(--color-red-glow);
+}
+
+.budget-bar__remaining {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.budget-bar__warning {
+  color: var(--color-red);
+  font-weight: 600;
+}

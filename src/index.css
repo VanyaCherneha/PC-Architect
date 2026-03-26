@@ -1,0 +1,136 @@
+/* ========================================
+   PC ARCHITECT — Global Styles
+   Dark comic-book / cyberpunk aesthetic
+   ======================================== */
+
+/* --- CSS Variables --- */
+:root {
+  --color-base: #0A0E1A;
+  --color-base-light: #141925;
+  --color-base-lighter: #1E2438;
+  --color-accent: #2E75B6;
+  --color-neon: #00FFFF;
+  --color-neon-glow: rgba(0, 255, 255, 0.3);
+  --color-red: #FF3366;
+  --color-red-glow: rgba(255, 51, 102, 0.3);
+  --color-green: #00FF88;
+  --color-green-glow: rgba(0, 255, 136, 0.3);
+  --color-purple: #B62E8A;
+  --color-purple-glow: rgba(182, 46, 138, 0.3);
+  --color-yellow: #FFD600;
+  --color-text: #E8ECF1;
+  --color-text-dim: #8892A4;
+  --color-overlay: rgba(10, 14, 26, 0.85);
+  --color-panel: rgba(20, 25, 37, 0.92);
+
+  --font-title: 'Bangers', cursive;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --border-comic: 3px solid rgba(0, 255, 255, 0.25);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+
+  --shadow-neon: 0 0 15px rgba(0, 255, 255, 0.15), 0 0 30px rgba(0, 255, 255, 0.05);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.35s ease;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-neon);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Utility classes --- */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-base-lighter);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px var(--color-neon-glow); }
+  50%      { box-shadow: 0 0 20px var(--color-neon-glow), 0 0 40px var(--color-neon-glow); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}

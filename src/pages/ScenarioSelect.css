@@ -1,0 +1,152 @@
+/* ScenarioSelect Page */
+.scenario-select {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.scenario-select__overlay {
+  min-height: 100vh;
+  background: var(--color-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 3rem;
+  gap: 3rem;
+}
+
+.scenario-select__hero {
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.scenario-select__title {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  color: var(--color-neon);
+  letter-spacing: 12px;
+  text-shadow:
+    0 0 20px var(--color-neon-glow),
+    0 0 40px var(--color-neon-glow),
+    0 0 80px rgba(0, 255, 255, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.scenario-select__subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-dim);
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.scenario-select__cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeIn 0.8s ease 0.2s both;
+}
+
+.scenario-select__difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  animation: fadeIn 0.8s ease 0.3s both;
+}
+
+.scenario-select__difficulty-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.scenario-select__difficulty-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.scenario-select__difficulty-btn {
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all var(--transition-fast);
+}
+
+.scenario-select__difficulty-btn--easy {
+  border-color: #3ad16f;
+}
+
+.scenario-select__difficulty-btn--normal {
+  border-color: #00ffff;
+}
+
+.scenario-select__difficulty-btn--hard {
+  border-color: #ffb347;
+}
+
+.scenario-select__difficulty-btn--impossible {
+  border-color: #ff4d4d;
+}
+
+.scenario-select__difficulty-btn--goat {
+  border-color: #b266ff;
+}
+
+.scenario-select__difficulty-btn--active.scenario-select__difficulty-btn--easy {
+  background: linear-gradient(135deg, #1e7d3f, #3ad16f);
+  color: var(--color-base);
+  box-shadow: 0 0 18px rgba(58, 209, 111, 0.6);
+}
+
+.scenario-select__difficulty-btn--active.scenario-select__difficulty-btn--normal {
+  background: linear-gradient(135deg, #009999, #00ffff);
+  color: var(--color-base);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.6);
+}
+
+.scenario-select__difficulty-btn--active.scenario-select__difficulty-btn--hard {
+  background: linear-gradient(135deg, #b36b00, #ffb347);
+  color: var(--color-base);
+  box-shadow: 0 0 18px rgba(255, 179, 71, 0.6);
+}
+
+.scenario-select__difficulty-btn--active.scenario-select__difficulty-btn--impossible {
+  background: linear-gradient(135deg, #b30021, #ff4d4d);
+  color: var(--color-base);
+  box-shadow: 0 0 18px rgba(255, 77, 77, 0.7);
+}
+
+.scenario-select__difficulty-btn--active.scenario-select__difficulty-btn--goat {
+  background: linear-gradient(135deg, #5b1ea8, #d28bff);
+  color: var(--color-base);
+  box-shadow: 0 0 22px rgba(210, 139, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .scenario-select__title {
+    font-size: 3rem;
+    letter-spacing: 8px;
+  }
+
+  .scenario-select__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

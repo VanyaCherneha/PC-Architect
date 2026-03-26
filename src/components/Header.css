@@ -1,0 +1,157 @@
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: var(--color-panel);
+  border-bottom: var(--border-comic);
+  backdrop-filter: blur(12px);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.header__logo:hover {
+  transform: scale(1.03);
+}
+
+.header__icon {
+  font-size: 1.5rem;
+}
+
+.header__title {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--color-neon);
+  text-shadow: 0 0 10px var(--color-neon-glow), 0 0 20px var(--color-neon-glow);
+  letter-spacing: 4px;
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header__scenario {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-accent);
+  letter-spacing: 2px;
+}
+
+.header__budget {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-neon);
+}
+
+.header__timer {
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  color: var(--color-neon);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.header__timer--warning {
+  border-color: #ffb347;
+  color: #ffb347;
+  box-shadow: 0 0 12px rgba(255, 179, 71, 0.5);
+  animation: header-timer-pulse 1s infinite;
+}
+
+.header__timer--danger {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.8), 0 0 40px rgba(255, 77, 77, 0.4);
+  animation: header-timer-panic 0.4s infinite;
+  font-size: 1.05rem;
+}
+
+@keyframes header-timer-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes header-timer-panic {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  20% {
+    transform: scale(1.08) translateX(-2px);
+  }
+  40% {
+    transform: scale(1.08) translateX(2px);
+  }
+  60% {
+    transform: scale(1.08) translateX(-1px);
+  }
+  80% {
+    transform: scale(1.08) translateX(1px);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__fs-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-dim);
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header__fs-btn:hover {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.header__fs-label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.header__fs-btn--active {
+  color: var(--color-neon);
+  border-color: var(--color-neon);
+}

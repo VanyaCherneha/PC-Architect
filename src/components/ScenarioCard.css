@@ -1,0 +1,110 @@
+/* ScenarioCard */
+.scenario-card {
+  position: relative;
+  background: var(--color-panel);
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  padding: 2.5rem 2rem;
+  cursor: pointer;
+  transition: all var(--transition-med);
+  overflow: hidden;
+  flex: 1;
+  min-width: 260px;
+  max-width: 360px;
+}
+
+.scenario-card__glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--border-radius);
+  opacity: 0;
+  transition: opacity var(--transition-med);
+  background: radial-gradient(
+    ellipse at center,
+    var(--glow-color, var(--color-neon)),
+    transparent 70%
+  );
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.scenario-card:hover {
+  border-color: var(--glow-color, var(--color-neon));
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 30px color-mix(in srgb, var(--glow-color, var(--color-neon)) 30%, transparent),
+    0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.scenario-card:hover .scenario-card__glow {
+  opacity: 0.15;
+}
+
+.scenario-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.scenario-card__title {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  letter-spacing: 6px;
+  color: var(--glow-color, var(--color-neon));
+  text-shadow:
+    0 0 10px color-mix(in srgb, var(--glow-color, var(--color-neon)) 40%, transparent),
+    0 0 30px color-mix(in srgb, var(--glow-color, var(--color-neon)) 20%, transparent);
+}
+
+.scenario-card__description {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  line-height: 1.5;
+  min-height: 3.5rem;
+}
+
+.scenario-card__budget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0.5rem 0;
+}
+
+.scenario-card__budget-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-dim);
+}
+
+.scenario-card__budget-value {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--color-text);
+  letter-spacing: 3px;
+}
+
+.scenario-card__btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem 2rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--color-base);
+  background: var(--glow-color, var(--color-neon));
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.scenario-card__btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--glow-color, var(--color-neon)) 40%, transparent);
+}
