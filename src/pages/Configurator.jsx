@@ -195,21 +195,9 @@ function Configurator() {
 
   useEffect(() => {
     if (state.timer.timeUp && state.ranOutOfTime) {
-      const cpu = state.selectedComponents.CPU;
-      const buildComplete =
-        cpu &&
-        state.selectedComponents.Mainboard &&
-        state.selectedComponents.RAM &&
-        state.selectedComponents.PSU &&
-        state.selectedComponents.SSD &&
-        state.selectedComponents.Case &&
-        (cpu.hasIGPU || state.selectedComponents.GPU);
-
-      if (!buildComplete) {
-        navigate('/results');
-      }
+      navigate('/results');
     }
-  }, [state.timer.timeUp, state.ranOutOfTime, state.selectedComponents, navigate]);
+  }, [state.timer.timeUp, state.ranOutOfTime, navigate]);
 
   useEffect(() => {
     if (hintCooldown <= 0) return;

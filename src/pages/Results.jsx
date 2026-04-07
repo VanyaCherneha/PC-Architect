@@ -83,7 +83,8 @@ function Results() {
     const totalTdp = Object.values(state.selectedComponents).reduce((sum, c) => (c && c.category !== 'PSU' ? sum + (c.tdp || 0) : sum), 0);
     const psuWattage = state.selectedComponents.PSU ? state.selectedComponents.PSU.wattage : 0;
     const psuHeadroom = state.selectedComponents.PSU ? psuWattage - totalTdp : 0;
-    const { errors: compatibilityIssues } = getCompatibilityStatus(state.selectedComponents);
+    const { errors, warnings } = getCompatibilityStatus(state.selectedComponents);
+    const compatibilityIssues = [...(errors || []), ...(warnings || [])];
 
     const buildData = {
       cpu: state.selectedComponents.CPU ? { name: state.selectedComponents.CPU.name, tdp: state.selectedComponents.CPU.tdp, hasIGPU: state.selectedComponents.CPU.hasIGPU, socket: state.selectedComponents.CPU.socket, performanceClass: state.selectedComponents.CPU.performanceClass } : null,
