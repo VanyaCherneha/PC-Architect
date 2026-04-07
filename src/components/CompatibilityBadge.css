@@ -20,6 +20,12 @@
   animation: pulseGlow 2s ease-in-out infinite;
 }
 
+.compat-badge--warn {
+  border-color: var(--color-yellow);
+  background: rgba(255, 214, 0, 0.06);
+  box-shadow: 0 0 12px rgba(255, 214, 0, 0.3);
+}
+
 .compat-badge__header {
   display: flex;
   align-items: center;
@@ -38,6 +44,10 @@
 
 .compat-badge--ok .compat-badge__label {
   color: var(--color-green);
+}
+
+.compat-badge--warn .compat-badge__label {
+  color: var(--color-yellow);
 }
 
 .compat-badge--conflict .compat-badge__label {

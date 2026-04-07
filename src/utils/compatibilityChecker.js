@@ -95,10 +95,11 @@ export function checkCaseDimensions(build, tr) {
 
 /**
  * Get overall compatibility status for the current build.
- * Returns { isCompatible: bool, errors: string[] }
+ * Returns { isCompatible: bool, errors: string[], warnings: string[] }
  */
 export function getCompatibilityStatus(build, t) {
   const errors = [];
+  const warnings = [];
 
   const cpu = build.CPU;
   const mainboard = build.Mainboard;
@@ -115,8 +116,8 @@ export function getCompatibilityStatus(build, t) {
       'compat.cpuRamMismatch': `CPU/RAM mismatch: ${opts?.cpu} supports ${opts?.cpuRamType} but ${opts?.ram} is ${opts?.ramType}`,
       'compat.insufficientCooling': `Insufficient cooling: ${opts?.cooler} is rated for ${opts?.coolerTdp}W, but ${opts?.cpu} has a TDP of ${opts?.cpuTdp}W`,
       'compat.insufficientPsu': `Insufficient PSU: ${opts?.psu} (${opts?.psuWattage}W) may not handle peak draw of ${opts?.draw}W (TDP: ${opts?.tdp}W)`,
-      'compat.bottleneckCpuOverGpu': `Severe Bottleneck: The powerful ${opts?.cpu} is severely bottlenecked by the ${opts?.gpuTier}-tier ${opts?.gpu}.`,
-      'compat.bottleneckGpuOverCpu': `Severe Bottleneck: The powerful ${opts?.gpu} is held back by the ${opts?.cpuTier}-tier ${opts?.cpu}.`,
+      'compat.bottleneckCpuOverGpu': `Tip from Walter: The powerful ${opts?.cpu} is severely bottlenecked by the ${opts?.gpuTier}-tier ${opts?.gpu}.`,
+      'compat.bottleneckGpuOverCpu': `Tip from Walter: The powerful ${opts?.gpu} is held back by the ${opts?.cpuTier}-tier ${opts?.cpu}.`,
       'compat.caseMbMismatch': `Case mismatch: ${opts?.pcCase} does not support ${opts?.formFactor} motherboards.`,
       'compat.gpuTooLong': `GPU too long: ${opts?.gpu} is ${opts?.gpuLength}mm, but ${opts?.pcCase} only supports up to ${opts?.maxLength}mm.`,
       'compat.coolerTooTall': `Cooler too tall: ${opts?.cooler} is ${opts?.coolerHeight}mm, but ${opts?.pcCase} only supports up to ${opts?.maxHeight}mm.`,
@@ -175,14 +176,14 @@ export function getCompatibilityStatus(build, t) {
     const highEndCpu = cpu.performanceClass === 'ultra' || cpu.performanceClass === 'high';
     const lowEndGpu = build.GPU.performanceClass === 'low' || build.GPU.performanceClass === 'mid';
     if (highEndCpu && lowEndGpu) {
-      errors.push(
+      warnings.push(
         tr('compat.bottleneckCpuOverGpu', { cpu: cpu.name, gpuTier: build.GPU.performanceClass, gpu: build.GPU.name })
       );
     }
     const highEndGpu = build.GPU.performanceClass === 'ultra' || build.GPU.performanceClass === 'high';
     const lowEndCpu = cpu.performanceClass === 'low' || cpu.performanceClass === 'mid';
     if (highEndGpu && lowEndCpu) {
-      errors.push(
+      warnings.push(
         tr('compat.bottleneckGpuOverCpu', { gpu: build.GPU.name, cpuTier: cpu.performanceClass, cpu: cpu.name })
       );
     }
@@ -196,6 +197,7 @@ export function getCompatibilityStatus(build, t) {
   return {
     isCompatible: errors.length === 0,
     errors,
+    warnings,
   };
 }
 
@@ -228,7 +230,7 @@ export function calculateScore(build, scenarioKey, options = {}) {
 
   // --- Completeness (30 pts) ---
   const requiredCategories = ['CPU', 'GPU', 'RAM', 'Mainboard', 'PSU', 'SSD', 'Cooler', 'Case'];
-  
+
   // Custom completeness calc because GPU isn't STRICTLY required if CPU has iGPU
   let expectedCategories = [...requiredCategories];
   if (build.CPU && build.CPU.hasIGPU === true && !build.GPU) {
@@ -299,7 +301,7 @@ export function calculateScore(build, scenarioKey, options = {}) {
   }
 
   let maxAllowed = 100;
-  
+
   const totalTdp = Object.values(build).reduce((sum, c) => (c && c.category !== 'PSU' ? sum + (c.tdp || 0) : sum), 0);
   const psuWattage = build.PSU ? build.PSU.wattage : 0;
   const psuHeadroom = build.PSU ? psuWattage - totalTdp : 0;
