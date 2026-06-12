@@ -603,3 +603,61 @@
   font-size: 0.72rem;
   color: var(--color-text-dim);
 }
+
+@media (max-width: 640px) {
+  .results__content {
+    padding: 5rem 0.75rem 2rem;
+  }
+
+  .results__score-badge {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .results__grade {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+  }
+
+  .results__walter-speech,
+  .results__summary,
+  .results__performance,
+  .results__fps,
+  .results__achievements {
+    padding: 1rem 0.75rem;
+  }
+
+  .results__table {
+    font-size: 0.78rem;
+  }
+
+  .results__table th,
+  .results__table td {
+    padding: 0.4rem 0.3rem;
+  }
+
+  .results__fps-row {
+    grid-template-columns: minmax(90px, 120px) 1fr 64px;
+    gap: 0.5rem;
+  }
+
+  .results__fps-game,
+  .results__fps-value {
+    font-size: 0.75rem;
+  }
+
+  .results__achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results__actions {
+    flex-direction: column;
+  }
+
+  .results__btn {
+    width: 100%;
+  }
+}

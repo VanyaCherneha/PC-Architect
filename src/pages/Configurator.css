@@ -886,3 +886,87 @@
 .configurator__search-clear:hover {
   color: var(--color-red);
 }
+
+@media (max-width: 640px) {
+  /* Category sidebar becomes a horizontal scroll strip */
+  .configurator__sidebar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .configurator__sidebar-title {
+    display: none;
+  }
+
+  .configurator__auto-advance-btn,
+  .configurator__compare-btn {
+    width: auto;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .configurator__cat-btn {
+    flex-shrink: 0;
+    width: auto;
+    padding: 0.5rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .configurator__cat-name {
+    flex: 0 0 auto;
+  }
+
+  .configurator__cat-shortcut {
+    display: none;
+  }
+
+  .configurator__main {
+    padding: 1rem 0.75rem;
+  }
+
+  .configurator__main-title {
+    font-size: 1.2rem;
+  }
+
+  .configurator__filters {
+    gap: 0.5rem;
+  }
+
+  .configurator__filter-btn {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .configurator__panel {
+    padding: 1rem 0.75rem;
+  }
+
+  .configurator__actions {
+    flex-direction: column;
+  }
+
+  .configurator__hint-btn,
+  .configurator__assemble-btn {
+    width: 100%;
+  }
+
+  .configurator__compare-modal {
+    padding: 1rem 0.5rem;
+  }
+
+  .configurator__compare-table {
+    font-size: 0.7rem;
+  }
+
+  .configurator__compare-table th,
+  .configurator__compare-table td {
+    padding: 0.3rem;
+  }
+}

@@ -163,3 +163,15 @@
     padding: 0.9rem 2rem;
   }
 }
+
+.launch-screen,
+.launch-screen__overlay {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .launch-screen__glow-ring {
+    width: 320px;
+    height: 320px;
+  }
+}

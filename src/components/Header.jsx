@@ -95,10 +95,9 @@ function Header() {
         )}
 
         <button
-          className="header__btn"
+          className="header__btn header__lang-btn"
           onClick={toggleLanguage}
           title="Toggle Language"
-          style={{ background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.2rem', marginRight: '1rem', padding: '0.5rem', color: 'var(--color-neon)' }}
         >
           {i18n.language.startsWith('en') ? 'DE' : 'EN'}
         </button>
