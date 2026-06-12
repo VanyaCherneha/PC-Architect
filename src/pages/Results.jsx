@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useGame } from '../context/GameContext';
 import { calculateScore, getCompatibilityStatus } from '../utils/compatibilityChecker';
+import { estimateFps, fpsBucket } from '../utils/fpsEstimator';
+import { ACHIEVEMENTS, evaluateAchievements, unlockAchievements } from '../utils/achievements';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Walter from '../components/Walter';
+import Confetti from '../components/Confetti';
 import bgResults from '../assets/images/bg-results.png?update=3';
 import './Results.css';
 
@@ -31,6 +34,9 @@ function Results() {
   const [displayScore, setDisplayScore] = useState(0);
   const [assembling, setAssembling] = useState(true);
   const [shareCopied, setShareCopied] = useState(false);
+  const [earnedAchievements, setEarnedAchievements] = useState([]);
+  const [newAchievements, setNewAchievements] = useState([]);
+  const achievementsChecked = useRef(false);
 
   useEffect(() => {
     if (!state.selectedScenario) {
@@ -56,6 +62,20 @@ function Results() {
 
     fetchWalterFeedback(buildScoreData);
   }, [i18n.language]);
+
+  useEffect(() => {
+    if (assembling || !state.selectedScenario || achievementsChecked.current) return;
+    achievementsChecked.current = true;
+    const { score: localScore } = calculateScore(
+      state.selectedComponents,
+      state.selectedScenario,
+      { ranOutOfTime: state.ranOutOfTime }
+    );
+    const earned = evaluateAchievements(localScore, state);
+    const { newlyUnlocked } = unlockAchievements(earned);
+    setEarnedAchievements(earned);
+    setNewAchievements(newlyUnlocked);
+  }, [assembling]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (assembling) return;
@@ -203,6 +223,8 @@ You MUST respond in this EXACT JSON format (no markdown formatting, just pure JS
   const gamingPower = Math.round((gpuPerf * 0.6) + (cpuPerf * 0.3) + (ramPerf * 0.1));
   const workstationPower = Math.round((cpuPerf * 0.6) + (ramPerf * 0.3) + (gpuPerf * 0.1));
 
+  const fpsData = estimateFps(state.selectedComponents.CPU, state.selectedComponents.GPU);
+
   if (!state.selectedScenario) return null;
 
   const handleShareResult = async () => {
@@ -261,6 +283,7 @@ Built with PC Architect 🎮`;
       className="results"
       style={{ backgroundImage: `url(${bgResults})` }}
     >
+      {grade === 'A' && !loading && <Confetti />}
       <div className="results__overlay">
         <div className="results__content">
           {/* Walter section */}
@@ -356,6 +379,56 @@ Built with PC Architect 🎮`;
                 </div>
               </div>
             </div>
+
+            {/* FPS estimates */}
+            {fpsData && (
+              <div className="results__fps">
+                <h3 className="results__summary-title">{t('results.fpsTitle')}</h3>
+                {fpsData.map((game) => (
+                  <div key={game.id} className="results__fps-row">
+                    <span className="results__fps-game">{game.name}</span>
+                    <div className="results__fps-bar">
+                      <div
+                        className={`results__fps-fill results__fps-fill--${fpsBucket(game.fps)}`}
+                        style={{ width: `${Math.min((game.fps / 240) * 100, 100)}%` }}
+                      ></div>
+                    </div>
+                    <span className={`results__fps-value results__fps-value--${fpsBucket(game.fps)}`}>
+                      {game.fps} FPS
+                    </span>
+                  </div>
+                ))}
+                <p className="results__fps-caption">{t('results.fpsCaption')}</p>
+              </div>
+            )}
+
+            {/* Achievements */}
+            {earnedAchievements.length > 0 && (
+              <div className="results__achievements">
+                <h3 className="results__summary-title">{t('achievements.title')}</h3>
+                <div className="results__achievements-grid">
+                  {ACHIEVEMENTS.filter((a) => earnedAchievements.includes(a.id)).map((a) => (
+                    <div
+                      key={a.id}
+                      className={`results__achievement ${
+                        newAchievements.includes(a.id) ? 'results__achievement--new' : ''
+                      }`}
+                    >
+                      <span className="results__achievement-icon">{a.icon}</span>
+                      <div className="results__achievement-text">
+                        <span className="results__achievement-name">
+                          {t(`achievements.defs.${a.id}.name`)}
+                          {newAchievements.includes(a.id) && (
+                            <span className="results__achievement-badge">{t('achievements.newTag')}</span>
+                          )}
+                        </span>
+                        <span className="results__achievement-desc">{t(`achievements.defs.${a.id}.desc`)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Action buttons */}
             <div className="results__actions">

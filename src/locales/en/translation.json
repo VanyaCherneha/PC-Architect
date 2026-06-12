@@ -126,7 +126,9 @@
       "DECENT": "DECENT",
       "POOR": "POOR",
       "DISASTER": "DISASTER"
-    }
+    },
+    "fpsTitle": "Estimated FPS (1080p)",
+    "fpsCaption": "Rough estimates based on component tiers. Real benchmarks may disagree. So may Walter."
   },
   "walter": {
     "label": "Walter"
@@ -181,5 +183,47 @@
     "caseMbMismatch": "Case mismatch: {{pcCase}} does not support {{formFactor}} motherboards.",
     "gpuTooLong": "GPU too long: {{gpu}} is {{gpuLength}}mm, but {{pcCase}} only supports up to {{maxLength}}mm.",
     "coolerTooTall": "Cooler too tall: {{cooler}} is {{coolerHeight}}mm, but {{pcCase}} only supports up to {{maxHeight}}mm."
+  },
+  "achievements": {
+    "title": "Achievements",
+    "newTag": "NEW",
+    "defs": {
+      "first_build": {
+        "name": "Hello, World",
+        "desc": "Finish your first build"
+      },
+      "walters_favorite": {
+        "name": "Walter's Favorite",
+        "desc": "Score 90 or higher"
+      },
+      "disaster_artist": {
+        "name": "Disaster Artist",
+        "desc": "Score below 30. Impressive, in a way."
+      },
+      "fire_hazard": {
+        "name": "Fire Hazard",
+        "desc": "PSU too weak for the build. Smell that?"
+      },
+      "speed_demon": {
+        "name": "Speed Demon",
+        "desc": "Submit with more than half the time left"
+      },
+      "penny_pincher": {
+        "name": "Penny Pincher",
+        "desc": "Score 75+ while spending under 70% of the budget"
+      },
+      "big_spender": {
+        "name": "Big Spender",
+        "desc": "Blow past the budget"
+      },
+      "completionist": {
+        "name": "Completionist",
+        "desc": "Fill all 8 component slots"
+      },
+      "goat_survivor": {
+        "name": "GOAT Survivor",
+        "desc": "Score 50+ on GOAT difficulty (30 seconds!)"
+      }
+    }
   }
 }

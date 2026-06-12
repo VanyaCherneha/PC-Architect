@@ -248,8 +248,8 @@ function Configurator() {
   };
 
   const handleAskWalter = () => {
-    // Stop and clear the timer when the player submits in time
-    dispatch({ type: 'RESET_TIMER' });
+    // Stop the timer but keep the remaining time for achievements
+    dispatch({ type: 'STOP_TIMER' });
     navigate('/results');
   };
 

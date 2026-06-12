@@ -24,6 +24,12 @@ Your guide is **Walter**, a slightly unhinged mad-scientist hardware expert who 
 
 Beat the timer, stay on budget, and maybe — *maybe* — Walter gives you a thumbs up.
 
+After every build you also get:
+
+- **Estimated FPS** for CS2, Fortnite, GTA V, Cyberpunk 2077 and Minecraft, based on your parts
+- **Achievements** — from "Walter's Favorite" (score 90+) to "Fire Hazard" (your PSU is crying)
+- **Confetti** if you somehow earn an A. Walter will deny being proud of you.
+
 ## Run It Yourself
 
 ```bash

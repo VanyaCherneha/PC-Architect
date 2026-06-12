@@ -97,6 +97,15 @@ function gameReducer(state, action) {
       };
     }
 
+    case 'STOP_TIMER': {
+      // Stop the countdown but keep remainingSeconds intact so the
+      // results screen can see how fast the build was submitted.
+      return {
+        ...state,
+        timer: { ...state.timer, isRunning: false },
+      };
+    }
+
     case 'RESET_TIMER': {
       const difficulty = state.difficulty || 'normal';
       const totalSeconds =

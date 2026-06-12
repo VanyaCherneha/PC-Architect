@@ -126,7 +126,9 @@
       "DECENT": "AKZEPTABEL",
       "POOR": "SCHLECHT",
       "DISASTER": "KATASTROPHE"
-    }
+    },
+    "fpsTitle": "Geschätzte FPS (1080p)",
+    "fpsCaption": "Grobe Schätzung basierend auf Komponenten-Klassen. Echte Benchmarks können abweichen. Walter auch."
   },
   "walter": {
     "label": "Walter"
@@ -181,5 +183,47 @@
     "caseMbMismatch": "Gehäuse-Fehler: {{pcCase}} unterstützt keine {{formFactor}}-Mainboards.",
     "gpuTooLong": "GPU zu lang: {{gpu}} ist {{gpuLength}}mm, aber {{pcCase}} unterstützt nur bis {{maxLength}}mm.",
     "coolerTooTall": "Kühler zu hoch: {{cooler}} ist {{coolerHeight}}mm, aber {{pcCase}} unterstützt nur bis {{maxHeight}}mm."
+  },
+  "achievements": {
+    "title": "Erfolge",
+    "newTag": "NEU",
+    "defs": {
+      "first_build": {
+        "name": "Hallo, Welt",
+        "desc": "Schliesse deinen ersten Build ab"
+      },
+      "walters_favorite": {
+        "name": "Walters Liebling",
+        "desc": "Erreiche 90 Punkte oder mehr"
+      },
+      "disaster_artist": {
+        "name": "Katastrophen-Künstler",
+        "desc": "Weniger als 30 Punkte. Auf seine Art beeindruckend."
+      },
+      "fire_hazard": {
+        "name": "Brandgefahr",
+        "desc": "Netzteil zu schwach für den Build. Riechst du das?"
+      },
+      "speed_demon": {
+        "name": "Blitzbauer",
+        "desc": "Abgabe mit mehr als der Hälfte der Zeit übrig"
+      },
+      "penny_pincher": {
+        "name": "Sparfuchs",
+        "desc": "75+ Punkte mit weniger als 70% des Budgets"
+      },
+      "big_spender": {
+        "name": "Verschwender",
+        "desc": "Budget gesprengt"
+      },
+      "completionist": {
+        "name": "Komplettist",
+        "desc": "Alle 8 Komponenten-Slots gefüllt"
+      },
+      "goat_survivor": {
+        "name": "GOAT-Überlebender",
+        "desc": "50+ Punkte auf GOAT-Schwierigkeit (30 Sekunden!)"
+      }
+    }
   }
 }
