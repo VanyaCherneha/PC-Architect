@@ -1,4 +1,15 @@
 node_modules
 dist
+
+# env / secrets
 .env
 api.env
+
+# local tooling & scratch
+.claude/
+graphify-out/
+
+# docs & word temp files
+*.docx
+~$*
+generate_kurzanleitung.py

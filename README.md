@@ -1,70 +1,62 @@
-#  PC Architect
+# 🖥️ PC Architect
 
-An interactive PC hardware simulator and learning game built with React. Choose a scenario, pick components, check compatibility in real-time, and get AI-powered feedback from **Walter** — your crazy but brilliant PC hardware expert!
+A little game I built for fun: you get a budget, a mission, and a ticking timer — now go build a PC that doesn't explode. 💥
 
-##  Getting Started
+Your guide is **Walter**, a slightly unhinged mad-scientist hardware expert who will roast your build choices without mercy (powered by Gemini, so the roasts are fresh every time).
 
-### Prerequisites
-- Node.js 18+ 
-- npm 9+
+![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
+![Vibe](https://img.shields.io/badge/vibe-just%20for%20fun-ff69b4)
 
-### Installation
+## 🎮 How to Play
+
+1. **Pick a mission** — Office (CHF 600), Gaming (CHF 1500), or Workstation (CHF 2500)
+2. **Build your PC** — CPU, GPU, RAM, mainboard, PSU, SSD, cooler, case
+3. **Don't mess up** — real-time compatibility checks: socket match, RAM type, PSU wattage, GPU length, cooler height...
+4. **Face Walter** — he scores your build from A to D and roasts your worst decision
+
+Beat the timer, stay on budget, and maybe — *maybe* — Walter gives you a thumbs up. 👍
+
+## 🚀 Run It Yourself
 
 ```bash
-# Clone the repo
-git clone <repo-url>
+git clone https://github.com/VanyaCherneha/PC-Architect.git
 cd PC-Architect
-
-# Install dependencies
 npm install
 
-# Set up your Gemini API key
+# optional: give Walter a brain
 cp .env.example .env
-# Edit .env and add your Google Gemini API key
-```
+# put your Google Gemini API key into .env
 
-### Running the App
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173) and start building.
 
-##  How to Play
+No API key? No problem — Walter falls back to canned (but still judgmental) feedback.
 
-1. **Choose a Scenario** — Office (CHF 600), Gaming (CHF 1500), or Workstation (CHF 2500)
-2. **Build Your PC** — Select components from 7 categories: CPU, GPU, RAM, Mainboard, PSU, SSD, Cooler
-3. **Watch Compatibility** — Real-time checks for socket match, RAM type, and PSU wattage
-4. **Ask Walter** — Get AI-powered feedback on your build with a score from A to D
+> ⚠️ The Gemini key is used client-side, so don't deploy this with a key you care about. It's a toy, not a bank.
 
-##  Tech Stack
+## 🛠️ Tech
 
 - **React 18** + **Vite**
-- **React Router v6** for navigation
-- **Context API** for state management
-- **Google Gemini API** for AI feedback
-- **Plain CSS** with cyberpunk/comic-book design
+- **React Router** + **Context API**
+- **i18next** — English & German 🇬🇧🇩🇪
+- **Google Gemini** for Walter's AI roasts
+- Plain CSS, cyberpunk comic-book style
 
-##  Project Structure
+## 📁 Structure
 
 ```
 src/
-├── assets/images/     # Background images and Walter avatars
-├── components/        # Reusable UI components
-├── pages/             # ScenarioSelect, Configurator, Results
+├── assets/images/     # Backgrounds and Walter's many moods
+├── components/        # UI bits (BudgetBar, ComponentCard, Walter, ...)
+├── pages/             # ScenarioSelect → Configurator → Results
 ├── context/           # GameContext (global state)
-├── data/              # components.json (hardware database)
-├── utils/             # Compatibility checker logic
-└── App.jsx            # App shell with routing
+├── data/              # components.json (the hardware "database")
+└── utils/             # Compatibility checker logic
 ```
 
-##  Environment Variables
+## 📜 License
 
-| Variable | Description |
-|---|---|
-| `VITE_GEMINI_API_KEY` | Your Google Gemini API key |
-
-##  License
-
-MIT
+MIT — do whatever you want with it. Walter doesn't judge. (He does.)

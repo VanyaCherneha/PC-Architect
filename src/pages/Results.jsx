@@ -137,7 +137,7 @@ You MUST respond in this EXACT JSON format (no markdown formatting, just pure JS
 
     try {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey || apiKey === 'your_key_here') {
+      if (!apiKey || apiKey === 'your_key_here' || apiKey === 'your_gemini_api_key_here') {
         const fallback = getFallbackMessage(score);
         setWalterMessage(fallback);
         setScore(fallback.score);
