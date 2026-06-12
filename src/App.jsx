@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import LaunchScreen from './components/LaunchScreen';
 import ScenarioSelect from './pages/ScenarioSelect';
@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<ScenarioSelect />} />
         <Route path="/configurator" element={<Configurator />} />
         <Route path="/results" element={<Results />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );
