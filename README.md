@@ -8,6 +8,12 @@ Your guide is **Walter**, a slightly unhinged mad-scientist hardware expert who 
 ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
 ![Vibe](https://img.shields.io/badge/vibe-just%20for%20fun-ff69b4)
 
+## 📸 Meet Walter
+
+| Approves your build | Judging you | Something exploded |
+|:---:|:---:|:---:|
+| ![Walter thumbs up](src/assets/images/walter-thumbs.png) | ![Walter thinking](src/assets/images/walter-thinking.png) | ![Walter disappointed](src/assets/images/walter-disappointed.png) |
+
 ## 🎮 How to Play
 
 1. **Pick a mission** — Office (CHF 600), Gaming (CHF 1500), or Workstation (CHF 2500)

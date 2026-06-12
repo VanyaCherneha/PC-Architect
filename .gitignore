@@ -13,3 +13,6 @@ graphify-out/
 *.docx
 ~$*
 generate_kurzanleitung.py
+
+# duplicate art source folder (real assets live in src/assets/images)
+Images/
